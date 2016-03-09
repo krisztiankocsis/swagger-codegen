@@ -27,6 +27,18 @@
             <email>fehguy@gmail.com</email>
         </developer>
     </developers>
+    <distributionManagement>
+        <repository>
+            <id>optimaster-thirdparty-releases</id>
+            <url>https://www.optimaster.eu/artifactory/thirdparty-releases</url>
+            <uniqueVersion>false</uniqueVersion>
+        </repository>
+        <snapshotRepository>
+            <id>optimaster-thirdparty-snapshots</id>
+            <url>https://www.optimaster.eu/artifactory/thirdparty-snapshots</url>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
     <issueManagement>
         <system>github</system>
         <url>https://github.com/swagger-api/swagger-core/issues</url>
