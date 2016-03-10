@@ -286,7 +286,7 @@ public class JavaResteasyServerCodegen extends JavaClientCodegen implements Code
 
         if (templateName.endsWith("Impl.mustache")) {
             int ix = result.lastIndexOf('/');
-            result = result.substring(0, ix) + "/impl" + result.substring(ix, result.length() - 5) + "ServiceImpl.java";
+            result = result.substring(0, ix) + "/services" + result.substring(ix, result.length() - 5) + "ServiceImpl.java";
 
             result = result.replace(apiFileFolder(), implFileFolder(implFolder));
         } else if (templateName.endsWith("Factory.mustache")) {
