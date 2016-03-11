@@ -122,7 +122,7 @@ public class JavaResteasyServerCodegen extends JavaClientCodegen implements Code
             importMapping.put("LocalDate", "org.joda.time.LocalDate");
             importMapping.put("DateTime", "org.joda.time.DateTime");
 
-            supportingFiles.add(new SupportingFile("JacksonConfig.mustache",
+            supportingFiles.add(new SupportingFile("JodaJacksonConfig.mustache",
                     (sourceFolder + '/' + invokerPackage).replace(".", "/"), "JacksonConfig.java"));
 
             supportingFiles.add(new SupportingFile("JodaDateTimeProvider.mustache",
@@ -132,10 +132,15 @@ public class JavaResteasyServerCodegen extends JavaClientCodegen implements Code
         } else if ("java8".equals(dateLibrary)) {
             additionalProperties.put("java8", "true");
             additionalProperties.put("javaVersion", "1.8");
+
             typeMapping.put("date", "LocalDate");
             typeMapping.put("DateTime", "LocalDateTime");
+
             importMapping.put("LocalDate", "java.time.LocalDate");
             importMapping.put("LocalDateTime", "java.time.LocalDateTime");
+
+            supportingFiles.add(new SupportingFile("Java8JacksonConfig.mustache",
+                    (sourceFolder + '/' + invokerPackage).replace(".", "/"), "JacksonConfig.java"));
 
             supportingFiles.add(new SupportingFile("LocalDateTimeProvider.mustache",
                     (sourceFolder + '/' + apiPackage).replace(".", "/"), "LocalDateTimeProvider.java"));
