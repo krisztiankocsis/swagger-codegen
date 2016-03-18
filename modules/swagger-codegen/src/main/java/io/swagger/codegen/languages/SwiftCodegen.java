@@ -420,7 +420,7 @@ public class SwiftCodegen extends DefaultCodegen implements CodegenConfig {
             name = escapeReservedWord(name);
         }
 
-        return name;
+        return "__" + name;
     }
 
     @Override
