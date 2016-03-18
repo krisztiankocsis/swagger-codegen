@@ -301,6 +301,10 @@ public class JavaClientCodegen extends DefaultCodegen implements CodegenConfig {
             importMapping.put("LocalDate", "java.time.LocalDate");
             importMapping.put("LocalDateTime", "java.time.LocalDateTime");
         }
+
+        supportingFiles.add(new SupportingFile("git_push.sh.mustache", "", "git_push.sh"));
+        supportingFiles.add(new SupportingFile("gitignore.mustache", "", ".gitignore"));
+
     }
 
     private boolean usesAnyRetrofitLibrary() {
@@ -390,6 +394,13 @@ public class JavaClientCodegen extends DefaultCodegen implements CodegenConfig {
         if (isReservedWord(camelizedName)) {
             final String modelName = "Model" + camelizedName;
             LOGGER.warn(camelizedName + " (reserved word) cannot be used as model name. Renamed to " + modelName);
+            return modelName;
+        }
+
+        // model name starts with number
+        if (name.matches("^\\d.*")) {
+            final String modelName = "Model" + camelizedName; // e.g. 200Response => Model200Response (after camelize)
+            LOGGER.warn(name + " (model name starts with number) cannot be used as model name. Renamed to " + modelName);
             return modelName;
         }
 
