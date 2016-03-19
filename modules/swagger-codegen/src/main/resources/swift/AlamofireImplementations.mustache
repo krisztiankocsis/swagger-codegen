@@ -89,7 +89,17 @@ class AlamofireRequestBuilder<T>: RequestBuilder<T> {
             }
             if let json: AnyObject = response.result.value {
                 let body = Decoders.decode(clazz: T.self, source: json)
-                completion(response: Response(response: response.response!, body: body), error: nil)
+                let myResponse = Response(response: response.response!, body: body)
+
+                var error:NSError? = nil
+
+                if (myResponse.statusCode == 500) {
+                  error = NSError(domain: NSURLErrorDomain, code: 500)
+                } else if (myResponse.statusCode != 200) {
+                  error = NSError(domain: NSURLErrorDomain, code: myResponse.statusCode, userInfo: [NSLocalizedDescriptionKey : json["code"]!!] as [NSObject : AnyObject])
+                }
+
+                completion(response: myResponse, error: error)
                 return
             } else if "" is T {
                 // swagger-parser currently doesn't support void, which will be fixed in future swagger-parser release
