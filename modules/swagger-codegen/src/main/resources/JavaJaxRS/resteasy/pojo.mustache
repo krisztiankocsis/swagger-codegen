@@ -45,22 +45,24 @@ public class {{classname}} {{#parent}}extends {{{parent}}}{{/parent}} {{#seriali
 
   @Override
   public String toString() {
-    StringBuilder sb = new StringBuilder();
+    final StringBuilder sb = new StringBuilder();
     sb.append("class {{classname}} {\n");
-    {{#parent}}sb.append("    ").append(toIndentedString(super.toString())).append("\n");{{/parent}}
-    {{#vars}}sb.append("    {{name}}: ").append(toIndentedString({{name}})).append("\n");
+    {{#parent}}sb.append("  ").append(toIndentedString(super.toString())).append("\n");{{/parent}}
+    {{#vars}}sb.append("  {{name}}: ").append(toIndentedString({{name}})).append("\n");
     {{/vars}}sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
+   * Convert the given object to string with each line indented by 2 spaces
    * (except the first line).
    */
   private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
-    return o.toString().replace("\n", "\n    ");
+    final String oString = o.toString();
+    String oLimitedString = (oString.length() > 120) ? oString.substring(0, 117) + "..." : oString;
+    return oLimitedString.replace("\n", "\n  ");
   }
 }
