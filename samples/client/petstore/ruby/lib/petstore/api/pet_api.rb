@@ -201,7 +201,7 @@ module Petstore
     # Finds Pets by status
     # Multiple status values can be provided with comma separated strings
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :status Status values that need to be considered for query
+    # @option opts [Array<String>] :status Status values that need to be considered for query (default to available)
     # @return [Array<Pet>]
     def find_pets_by_status(opts = {})
       data, status_code, headers = find_pets_by_status_with_http_info(opts)
@@ -315,7 +315,7 @@ module Petstore
     end
 
     # Find pet by ID
-    # Returns a pet when ID &lt; 10.  ID &gt; 10 or nonintegers will simulate API error conditions
+    # Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error conditions
     # @param pet_id ID of pet that needs to be fetched
     # @param [Hash] opts the optional parameters
     # @return [Pet]
@@ -374,8 +374,8 @@ module Petstore
       return data, status_code, headers
     end
 
-    # Fake endpoint to test inline arbitrary object return by &#39;Find pet by ID&#39;
-    # Returns a pet when ID &lt; 10.  ID &gt; 10 or nonintegers will simulate API error conditions
+    # Fake endpoint to test inline arbitrary object return by 'Find pet by ID'
+    # Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error conditions
     # @param pet_id ID of pet that needs to be fetched
     # @param [Hash] opts the optional parameters
     # @return [InlineResponse200]
@@ -434,8 +434,8 @@ module Petstore
       return data, status_code, headers
     end
 
-    # Fake endpoint to test byte array return by &#39;Find pet by ID&#39;
-    # Returns a pet when ID &lt; 10.  ID &gt; 10 or nonintegers will simulate API error conditions
+    # Fake endpoint to test byte array return by 'Find pet by ID'
+    # Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error conditions
     # @param pet_id ID of pet that needs to be fetched
     # @param [Hash] opts the optional parameters
     # @return [String]
