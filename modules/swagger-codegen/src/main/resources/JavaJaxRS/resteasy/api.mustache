@@ -3,12 +3,11 @@ package {{package}};
 {{#imports}}import {{import}};
 {{/imports}}
 
-import javax.ejb.Asynchronous;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.container.AsyncResponse;
 import javax.ws.rs.container.Suspended;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.Request;
+import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.*;
 
 {{#operations}}{{#operation}}{{#isMultipart}}import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
@@ -23,12 +22,10 @@ public interface {{classname}}
 {
 {{#operation}}
     @{{httpMethod}}
-    @Asynchronous
     {{#subresourceOperation}}@Path("{{path}}"){{/subresourceOperation}}
     {{#hasConsumes}}@Consumes({ {{#consumes}}"{{mediaType}}"{{#hasMore}}, {{/hasMore}}{{/consumes}} }){{/hasConsumes}}
     {{#hasProduces}}@Produces({ {{#produces}}"{{mediaType}}"{{#hasMore}}, {{/hasMore}}{{/produces}} }){{/hasProduces}}
-    public void {{nickname}}({{#isMultipart}}MultipartFormDataInput input,{{/isMultipart}}{{#allParams}}{{>queryParams}}{{>pathParams}}{{>headerParams}}{{>bodyParams}}{{^isMultipart}}{{>formParams}},{{/isMultipart}}{{#isMultipart}}{{^isFormParam}},{{/isFormParam}}{{/isMultipart}}{{/allParams}}@Suspended AsyncResponse responder, @Context HttpServletRequest request, @Context HttpServletResponse response)
-      throws Exception;
+    public void {{nickname}}({{#isMultipart}}MultipartFormDataInput input,{{/isMultipart}}{{#allParams}}{{>queryParams}}{{>pathParams}}{{>bodyParams}}{{^isMultipart}}{{>formParams}},{{/isMultipart}}{{#isMultipart}}{{^isFormParam}},{{/isFormParam}}{{/isMultipart}}{{/allParams}}@Context Request request,@Suspended AsyncResponse response,@Context SecurityContext security);
 {{/operation}}
 }
 {{/operations}}
