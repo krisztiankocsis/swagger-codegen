@@ -95,7 +95,7 @@ class AlamofireRequestBuilder<T>: RequestBuilder<T> {
 
                 if (myResponse.statusCode == 500) {
                   error = NSError(domain: NSURLErrorDomain, code: 500, userInfo: [:])
-                } else if (myResponse.statusCode != 200) {
+                } else if ((myResponse.statusCode != 200) && (myResponse.statusCode != 204)) {
                   error = NSError(domain: NSURLErrorDomain, code: myResponse.statusCode, userInfo: [NSLocalizedDescriptionKey : json["code"]!!] as [NSObject : AnyObject])
                 }
 
