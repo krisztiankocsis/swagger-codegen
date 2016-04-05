@@ -10,7 +10,7 @@
     <artifactId>swagger-codegen-project</artifactId>
     <packaging>pom</packaging>
     <name>swagger-codegen-project</name>
-    <version>2.1.6-SNAPSHOT</version>
+    <version>2.1.6.Classic-SNAPSHOT</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <scm>
         <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
@@ -507,7 +507,7 @@
         <module>modules/swagger-codegen</module>
         <module>modules/swagger-codegen-cli</module>
         <module>modules/swagger-codegen-maven-plugin</module>
-        <module>modules/swagger-generator</module>
+        <!--<module>modules/swagger-generator</module>-->
     </modules>
     <reporting>
         <outputDirectory>target/site</outputDirectory>
