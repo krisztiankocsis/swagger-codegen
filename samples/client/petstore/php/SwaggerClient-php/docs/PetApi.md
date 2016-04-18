@@ -5,13 +5,13 @@ All URIs are relative to *http://petstore.swagger.io/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addPet**](PetApi.md#addPet) | **POST** /pet | Add a new pet to the store
-[**addPetUsingByteArray**](PetApi.md#addPetUsingByteArray) | **POST** /pet?testing_byte_array=true | Fake endpoint to test byte array in body parameter for adding a new pet to the store
+[**addPetUsingByteArray**](PetApi.md#addPetUsingByteArray) | **POST** /pet?testing_byte_array&#x3D;true | Fake endpoint to test byte array in body parameter for adding a new pet to the store
 [**deletePet**](PetApi.md#deletePet) | **DELETE** /pet/{petId} | Deletes a pet
 [**findPetsByStatus**](PetApi.md#findPetsByStatus) | **GET** /pet/findByStatus | Finds Pets by status
 [**findPetsByTags**](PetApi.md#findPetsByTags) | **GET** /pet/findByTags | Finds Pets by tags
 [**getPetById**](PetApi.md#getPetById) | **GET** /pet/{petId} | Find pet by ID
-[**getPetByIdInObject**](PetApi.md#getPetByIdInObject) | **GET** /pet/{petId}?response=inline_arbitrary_object | Fake endpoint to test inline arbitrary object return by &#39;Find pet by ID&#39;
-[**petPetIdtestingByteArraytrueGet**](PetApi.md#petPetIdtestingByteArraytrueGet) | **GET** /pet/{petId}?testing_byte_array=true | Fake endpoint to test byte array return by &#39;Find pet by ID&#39;
+[**getPetByIdInObject**](PetApi.md#getPetByIdInObject) | **GET** /pet/{petId}?response&#x3D;inline_arbitrary_object | Fake endpoint to test inline arbitrary object return by &#39;Find pet by ID&#39;
+[**petPetIdtestingByteArraytrueGet**](PetApi.md#petPetIdtestingByteArraytrueGet) | **GET** /pet/{petId}?testing_byte_array&#x3D;true | Fake endpoint to test byte array return by &#39;Find pet by ID&#39;
 [**updatePet**](PetApi.md#updatePet) | **PUT** /pet | Update an existing pet
 [**updatePetWithForm**](PetApi.md#updatePetWithForm) | **POST** /pet/{petId} | Updates a pet in the store with form data
 [**uploadFile**](PetApi.md#uploadFile) | **POST** /pet/{petId}/uploadImage | uploads an image
@@ -57,7 +57,7 @@ void (empty response body)
 
 [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
@@ -104,7 +104,7 @@ void (empty response body)
 
 [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
@@ -153,7 +153,7 @@ void (empty response body)
 
 [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key), [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key), [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 [api_key](../README.md#api_key), [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
@@ -452,7 +452,7 @@ void (empty response body)
 
 [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
@@ -503,7 +503,7 @@ void (empty response body)
 
 [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: application/x-www-form-urlencoded
  - **Accept**: application/json, application/xml
@@ -554,7 +554,7 @@ void (empty response body)
 
 [petstore_auth](../README.md#petstore_auth)
 
-### HTTP reuqest headers
+### HTTP request headers
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json, application/xml
