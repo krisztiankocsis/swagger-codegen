@@ -53,6 +53,7 @@ public class JavascriptClosureAngularClientCodegen extends DefaultCodegen implem
         typeMapping.put("integer", "number");
         typeMapping.put("Map", "Object");
         typeMapping.put("map", "Object");
+        typeMapping.put("Date", "Date");
         typeMapping.put("DateTime", "Date");
 
         importMapping = new HashMap<String, String>();
@@ -219,6 +220,17 @@ public class JavascriptClosureAngularClientCodegen extends DefaultCodegen implem
                     return o1.get("import").compareTo(o2.get("import"));
                 }
             });
+            Map<String, String> badImportStmt = null;
+            for (final Map<String, String> myImport : imports) {
+              if (myImport.get("import").equals("API.Client.date")) {
+                badImportStmt = myImport;
+                break;
+              }
+            }
+            if (badImportStmt != null) {
+              System.out.println("Ignoring bad 'date' import statement");
+              imports.remove(badImportStmt);
+            }
             objs.put("imports", imports);
         }
         return objs;
