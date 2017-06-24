@@ -10,7 +10,7 @@
     <artifactId>swagger-codegen-project</artifactId>
     <packaging>pom</packaging>
     <name>swagger-codegen-project</name>
-    <version>2.1.6.Optimaster-SNAPSHOT</version>
+    <version>2.1.6-custom</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <scm>
         <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
@@ -29,13 +29,13 @@
     </developers>
     <distributionManagement>
         <repository>
-            <id>optimaster-thirdparty-releases</id>
-            <url>https://www.optimaster.eu/artifactory/thirdparty-releases</url>
+            <id>optimaster-develop</id>
+            <url>https://develop.optimaster.eu/nexus/repository/maven-public-releases</url>
             <uniqueVersion>false</uniqueVersion>
         </repository>
         <snapshotRepository>
-            <id>optimaster-thirdparty-snapshots</id>
-            <url>https://www.optimaster.eu/artifactory/thirdparty-snapshots</url>
+            <id>optimaster-develop</id>
+            <url>https://develop.optimaster.eu/nexus/repository/maven-public-snapshots</url>
             <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
